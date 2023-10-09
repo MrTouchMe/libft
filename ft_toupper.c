@@ -6,15 +6,15 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 23:03:45 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/09/13 23:13:42 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/08 22:48:26 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if(c >= 'a' && c <= 'z')
-        c = c - ('a' - 'A');
-    return c;
+	if (c >= 'a' && c <= 'z')
+		c = c - ('a' - 'A');
+	return (c);
 }

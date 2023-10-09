@@ -6,25 +6,25 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 19:23:10 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/09/11 21:43:10 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/08 22:43:52 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char*  ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
-    if (dst == NULL || src == NULL)
-    {
-        return;
-    }
+	int	i;
 
-    int i = 0;
-    while (src[i] != '\0')
-    {
-        dst[i] = src[i];
-        i++;
-    }
-
-    dst[i] = '\0';
+	i = 0;
+	if (dst == NULL || src == NULL)
+	{
+		return ;
+	}
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
 }

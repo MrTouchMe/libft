@@ -6,17 +6,18 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 19:37:42 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/07 00:12:13 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/08 22:24:57 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *p = (unsigned char *)s;
+	unsigned char	*p;
 
-	while(n > 0)
+	*p = (unsigned char *)s;
+	while (n > 0)
 	{
 		*p = 0;
 		p++;

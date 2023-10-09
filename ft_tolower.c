@@ -6,15 +6,15 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 22:01:50 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/09/13 22:59:50 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/08 22:48:00 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if(c >= 'A' && c <= 'Z')
-        c = c + ('a' - 'A');
-    return c;
+	if (c >= 'A' && c <= 'Z')
+		c = c + ('a' - 'A');
+	return (c);
 }

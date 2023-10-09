@@ -6,16 +6,16 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 23:15:43 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/09/13 23:22:29 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/08 22:29:53 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if(c >= '0' && c <= '9')
-        return 1;
-    else
-        return 0;
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
