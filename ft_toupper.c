@@ -6,11 +6,11 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 23:03:45 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/08 22:48:26 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/09 07:57:26 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

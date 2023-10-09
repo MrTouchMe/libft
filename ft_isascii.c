@@ -6,11 +6,11 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:17:07 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/08 22:29:12 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/09 07:56:26 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

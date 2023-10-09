@@ -6,11 +6,11 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 22:01:50 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/08 22:48:00 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/09 07:57:21 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

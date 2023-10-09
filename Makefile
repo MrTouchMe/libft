@@ -5,51 +5,53 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/10 18:44:52 by dgiurgev          #+#    #+#              #
-#    Updated: 2023/10/06 23:59:43 by dgiurgev         ###   ########.fr        #
+#    Created: 2023/10/09 07:37:24 by dgiurgev          #+#    #+#              #
+#    Updated: 2023/10/09 07:43:10 by dgiurgev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-DEF_COLOR = \033[0;39m
-RED = \033[0;91m
-GREEN = \033[0;32m
-YELLOW = \033[0;93m
-BLUE = \033[0;94m
-MAGENTA = \033[0;95m
-CYAN = \033[0;96m
-WHITE = \033[0;97m
+SRCS			= $(wildcard *.c) ft_isalpha.c
+					
+OBJS			= $(SRCS:%.c=%.o)
 
-.SILENT:
-NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror 
-CC = cc
+# BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+# 					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+# 					ft_lstmap.c ft_lstsize.c ft_lstnew.c
+					
+# BONUS_OBJS		= $(BONUS:%.c=%.o)
 
-SRCS = $(wildcard *.c)
-OBJS = $(SRCS:.c=.o)
+CC				= cc
+RM				= rm -f
+CFLAGS			= -Wall -Wextra -Werror -I.
 
-SRCS_B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c 
-OBJS_B = $(SRCS_B:.c=.o)
+NAME			= libft.a
 
-$(NAME): $(OBJS)
-	$(CC) $(SRCS) $(NAME) $(OBJS)
+all:			$(NAME)
 
-all: $(NAME)
-	echo "$(GREEN)Libft Mandatory Compiled$(DEF_COLOR)"
+$(NAME):		$(OBJS) 
+				@ar rcs $(NAME) $(OBJS)
 
-# bonus: $(OBJS_B)
-# 	ar rcs $(NAME) $(OBJS_B)
-# 	echo "Libft Bonus Compiled"
+$(OBJS):		./%.o: ./%.c
+				@echo "Compiling $<"
+				@$(CC) $(FLAGS) -c $< -o $@
+				@echo "Done!"
+
+# $(BONUS_OBJS):	./%.o: ./%.c 
+# 				@echo "Compiling $<"
+# 				@$(CC) $(FLAGS) -c $< -o $@
+# 				@echo "Done!"
+				
+
 
 clean:
-	rm -f $(OBJS)
-	rm -f $(OBJS_B)
-	echo "$(RED)Object Files are deleted$(DEF_COLOR)"
+				$(RM) $(OBJS) 
 
-fclean: clean
-	rm -rf $(NAME)
-	echo "Everything is clean"
+fclean:			clean
+				$(RM) $(NAME)
 
-re: fclean all bonus
+re:				fclean $(NAME)
 
-.PHONY: all clean fclean bonus re
+# bonus:			$(BONUS_OBJS)
+# 				@ar rcs $(NAME) $(BONUS_OBJS)
+				
+.PHONY:			all clean fclean re bonus

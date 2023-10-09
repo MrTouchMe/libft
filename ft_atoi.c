@@ -6,11 +6,11 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:56:22 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/08 22:21:55 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/09 07:56:02 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

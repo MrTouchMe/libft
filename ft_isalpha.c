@@ -6,11 +6,11 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 23:22:46 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/08 22:27:39 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/09 07:56:21 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
