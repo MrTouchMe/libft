@@ -6,13 +6,11 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 00:11:05 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/10 08:41:48 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/10 18:59:23 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "libft.h"
-#include <stdio.h> // Include standard I/O for printing
 
 char	*ft_strrchr(const char*s, int c)
 {

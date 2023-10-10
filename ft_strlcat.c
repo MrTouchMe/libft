@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 21:11:13 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/10 20:18:43 by dgiurgev         ###   ########.fr       */
+/*   Created: 2023/10/10 19:16:07 by dgiurgev          #+#    #+#             */
+/*   Updated: 2023/10/10 21:25:53 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	convert_ascii(int c)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	if (c < 0)
-		return (256 - c);
-	return (c);
-}
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	i;
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	int	i;
-
+	dst_len = 0;
+	src_len = 0;
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && s1[i] == s2[i] && i <= n)
+	while (dst[dst_len] != '\0' && dst_len < dstsize)
+		dst_len++;
+	while (src[src_len] != '\0')
+		src_len++;
+	if (dstsize <= dst_len)
+		return (dstsize + src_len);
+	while (src[i] != '\0' && dst_len + i < dstsize -1)
+	{
+		dst[dst_len + i] = src[i];
 		i++;
-	return (convert_ascii(s1[i]) - convert_ascii(s2[i]));
+	}
+	dst[dst_len + i] = '\0';
+	return (dst_len + src_len);
 }
