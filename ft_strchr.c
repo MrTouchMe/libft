@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 23:34:47 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/09 07:56:58 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/09 23:34:02 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return (&((char *)s)[i]);
 		i++;
 	}
+	if (c == '\0')
+		return (&((char *)s)[i]);
 	return (NULL);
 }
