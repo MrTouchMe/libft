@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 00:11:05 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/10 18:59:23 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/12 20:02:48 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ char	*ft_strrchr(const char*s, int c)
 	int	len;
 
 	len = ft_strlen(s);
+	if (c == '\0')
+		return ((char *)(s + len));
 	while (len >= 0)
 	{
-		if (*(s + len) == c)
+		if (s[len] == (char)c)
 			return ((char *)(s + len));
 		len--;
 	}
