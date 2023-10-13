@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 09:41:12 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/13 10:32:45 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/14 01:28:45 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (start > len)
+	size_t	s_len;
+	size_t	actual_len;
+	char	*substr;
+
+	s_len = ft_strlen(s);
+	substr = malloc(actual_len + 1);
+	if (s == NULL || substr == NULL)
 		return (NULL);
-	while (start <= len)
+	if (start <= s_len)
+		substr[0] = '\0';
+	else
 	{
-		start = len - start;
-		return (s[start]);
+		actual_len = len;
+		if (actual_len < s_len - start)
+			actual_len = s_len - start;
+		ft_memcpy(substr, s + start, actual_len);
 	}
+	return (substr);
 }

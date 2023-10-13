@@ -6,14 +6,14 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:18:47 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/13 09:43:56 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/14 01:08:40 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h> //malloc
-// # include <unistd.h> //write
+# include <unistd.h> //write
 
 int		ft_isalpha(int c);
 int		ft_atoi(const char *str);
