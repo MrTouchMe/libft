@@ -6,14 +6,14 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:18:47 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/10 21:47:58 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/13 09:43:56 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h> //malloc
-# include <unistd.h> //write
+// # include <unistd.h> //write
 
 int		ft_isalpha(int c);
 int		ft_atoi(const char *str);
@@ -37,5 +37,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 #endif
