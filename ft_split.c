@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 05:33:28 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/14 05:58:12 by dgiurgev         ###   ########.fr       */
+/*   Created: 2023/10/14 05:36:15 by dgiurgev          #+#    #+#             */
+/*   Updated: 2023/10/14 05:58:01 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	**ft_split(char const *s, char c)
 {
 	
 }

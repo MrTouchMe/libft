@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 05:33:28 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/14 05:58:12 by dgiurgev         ###   ########.fr       */
+/*   Created: 2023/10/14 06:01:06 by dgiurgev          #+#    #+#             */
+/*   Updated: 2023/10/14 06:01:26 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	
+
 }
