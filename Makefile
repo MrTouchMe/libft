@@ -6,11 +6,11 @@
 #    By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 07:37:24 by dgiurgev          #+#    #+#              #
-#    Updated: 2023/10/09 07:43:10 by dgiurgev         ###   ########.fr        #
+#    Updated: 2023/10/14 07:10:42 by dgiurgev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= $(wildcard *.c) ft_isalpha.c
+SRCS			= $(wildcard *.c)
 					
 OBJS			= $(SRCS:%.c=%.o)
 
