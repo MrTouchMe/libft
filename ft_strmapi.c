@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 05:59:57 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/14 06:00:21 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/17 19:39:07 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	
+	return (NULL);
 }
