@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 06:05:08 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/14 06:05:36 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/21 00:56:51 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	
+	size_t	len;
+
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	write(fd, s, len);
+	write(fd, "\n", 1);
 }

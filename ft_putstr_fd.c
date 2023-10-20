@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 06:03:08 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/14 06:03:39 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/20 22:15:07 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	
+	size_t	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(fd, s, len);
 }
