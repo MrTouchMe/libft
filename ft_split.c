@@ -6,87 +6,69 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 05:36:15 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/21 00:55:33 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:05:26 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_in_set(char c, const char *set)
+// function to count words
+static int	count_words(char const *s, char c)
 {
-	while (*set)
-	{
-		if (c == *set)
-			return (1);
-		set++;
-	}
-	return (0);
-}
-
-static size_t	word_count(const char *s, const char *set)
-{
-	size_t count = 0;
-	int in_word = 0;
-
+	size_t	words_count = 0;
+	size_t	in_word = 0;
+	size_t	i = 0;
 	while (*s)
 	{
-		if (!is_in_set(*s, set))
-		{
+		if (*s != c)
 			if (!in_word)
 			{
-				count++;
-				in_word = 1;
+				words_count++;
+				in_word++;
 			}
-		}
-		else
-		{
-			in_word = 0;
-		}
-		s++;
-	}
-	return (count);
-}
-
-static char	*strndup(const char *src, size_t n)
-{
-	char	*dest = (char *)malloc(n + 1);
-
-	if (dest)
-	{
-		for (size_t i = 0; i < n; i++)
-		{
-			dest[i] = src[i];
-		}
-		dest[n] = '\0';
-	}
-	return (dest);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	if (!s)
-		return (NULL);
-	size_t count = word_count(s, &c);
-	char **result = (char **)malloc((count + 1) * sizeof(char *));
-	if (!result)
-		return (NULL);
-	size_t i = 0;
-	while (*s)
-	{
-		if (!is_in_set(*s, &c))
-		{
-			size_t len = 0;
-			while (s[len] && !is_in_set(s[len], &c))
-				len++;
-			result[i] = strndup(s, len);
-			if (!result[i])
-				return (NULL);
-			i++;
-			s += len;
-		}
-		else
+			else (in_word = 0);
 			s++;
 	}
-	result[i] = NULL;
+	return (words_count);
+}
+
+// function to split words
+static int	split_words(char **result, char const *s, char c)
+{
+	size_t	word = 0;
+	size_t	start_cur = 0;
+	size_t	end_cur = 0;
+	while (s[end_cur])
+	{
+		if ( s[end_cur] == c || s[end_cur] == '\0')
+		{
+			start_cur = end_cur + 1;
+		}
+        if (s[end_cur] != c && (s[end_cur + 1] == c || s[end_cur + 1] == '\0'))
+        {
+            result[word] = malloc (sizeof (char *) * (end_cur - start_cur + 2));
+            if (!result[word])
+            {
+                while (word-- /*word is greater than or equal to 0*/)
+                    free (result[word]);
+                return (0);
+            }
+            ft_strcpy (result[word], (s + start_cur), end_cur - start_cur +2);
+        }
+        end_cur++;
+	}
+    result[word] = 0;
+	return(1);
+}
+
+// main split function
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+	if (!s)
+		return (NULL);
+	result = malloc (sizeof (char *) * (count_words)(s, c) + 1);
+	if (!result)
+		return (NULL);
 	return (result);
 }
