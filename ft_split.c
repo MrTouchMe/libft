@@ -6,91 +6,69 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 05:36:15 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/23 04:07:01 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/24 03:08:33 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// function to free
+// This is a helper function that frees the memory allocated for an array of strings.
+// It takes two arguments: an array of strings (str) and the size of the array (size).
+// It iterates through the array and frees each string and returns -1.
+static void	split_free(const char **s)
+{
+	if (!s)
+		return ;
+	while (*s)
+		free(*s++);
+	free(s);
+}
+
 // function to count words
-static int  count_words(char const *s, char c)
+// This function counts the number of words in the input string str based on the delimiter character charset.
+// It iterates through the string and counts words based on the presence of the delimiter.
+// It returns the count of words found.
+static int	count_words(char const *s, char c)
 {
-    size_t  words_count;
-    size_t  in_word;
-    size_t  i;
+	int	i;
+	int	words;
 
-    words_count = 0;
-    in_word = 0;
-    i = 0;
-    while (*s)
-    {
-        if (*s != c)
-        {
-            if (!in_word)
-            {
-                words_count++;
-                in_word++;
-            }
-            else
-            {
-                in_word = 0;
-            }
-            s++;
-        }
-    }
-    return (words_count);
+	i = 0;
+	words = 0;
+	while (s[i])
+		if (s[i] == c && s[++i] != c)
+			words++;
+	return (words);
 }
 
-// function to split words
-static int split_words(char **result, const char *s, char c)
+// copy from input to dest
+// This function is responsible for copying a word from the input string to a destination string.
+// It takes three arguments: the destination string (dest), the source string (from), and the delimiter character charset.
+// It copies characters from from to dest until it reaches the delimiter or the end of the string.
+
+
+// splt strings into words and malloc
+// This function splits the input string into words and allocates memory for each word.
+// It takes three arguments: an array of strings (split), the input string (str), and the delimiter character charset.
+// It iterates through the string, identifies words based on the delimiter,
+// allocates memory for each word, and copies the word using the write_word function.
+
+
+// main function
+// It calculates the number of words in the input string using the count_words function.
+// It then allocates memory for an array of strings (res) to store the split words.
+// It calls the write_split function to populate the res array with the split words.
+// The function returns this array of split words.
+char	**ft_split(char const *s, char c)
 {
-   size_t word = 0;
-    size_t start_cur = 0;
-    size_t str_length = strlen(s);
+	char **res;
 
-    while (start_cur < str_length)
-    {
-        while (s[start_cur] == c)
-            start_cur++;
-        size_t end_cur = start_cur;
-        while (s[end_cur] && s[end_cur] != c)
-            end_cur++;
-
-        if (end_cur > start_cur)
-        {
-            size_t word_length = end_cur - start_cur;
-            result[word] = (char *)malloc(word_length + 1);
-            if (!result[word])
-            {
-                while (word > 0)
-                    free(result[--word]);
-                return 0;
-            }
-            strncpy(result[word], s + start_cur, word_length);
-            result[word][word_length] = '\0';
-            word++;
-        }
-        start_cur = end_cur + 1;
-    }
-    result[word] = NULL;
-    return 1;
+	if (!s)
+		return (NULL);
+	if (!*s)
+		return (NULL);
+	res = malloc((count_words(s, c) + 1) * sizeof(char *));
+	split(/*res*/, /*s*/, /*c*/);
+	return (res);
 }
-
-// main split function
-char    **ft_split(char const *s, char c)
-{
-    char    **result;
-
-    if (!s)
-        return (NULL);
-    result = malloc(sizeof(char *) * (count_words(s, c) + 1));
-    if (!result)
-        return (NULL);
-    if (!split_words(result, s, c))
-    {
-        free(result);
-        return (NULL);
-    }
-    return (result);
-}
-
