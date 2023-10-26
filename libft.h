@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:18:47 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/20 18:37:22 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/25 02:17:24 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 # define LIBFT_H
 # include <stdlib.h> //malloc
 # include <unistd.h> //write
+# include <strings.h>
+# include <stdio.h>
+
+// typedef struct s_split
+// {
+// 	size_t	word;;
+//     size_t	start_cur;
+//     size_t	str_length;
+// }				t_split;
 
 int		ft_isalpha(int c);
 int		ft_atoi(const char *str);
