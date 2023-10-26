@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 05:36:15 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/25 07:44:12 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:08:55 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,6 @@ static int	count_words(char const *s, char c)
 	return (word);
 }
 
-static void	write_word(char *dest, const char *src, char charset)
-{
-	int	i;
-
-	i = 0;
-	while (src[i] != charset && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-}
-
 int	write_split(char **split, const char *s, char charset)
 {
 	int	i;
@@ -85,14 +72,14 @@ int	write_split(char **split, const char *s, char charset)
 			i++;
 		if (!s[i])
 			break ;
-		size = ft_size_word(s, charset, i);
-		split[word] = (char *) malloc (size + 1);
+		split[word] = (char *) malloc (ft_size_word(s, charset, i) + 1);
 		if (!split[word])
 		{
 			split_free(split, word);
 			return (0);
 		}
-		write_word (split[word], s + i, charset);
+		ft_strlcpy(split[word], s + i, ft_size_word(s, charset, i) + 1);
+		split[word][ft_size_word (s, charset, i)] = '\0';
 		i += ft_strlen (split[word]);
 		word++;
 	}

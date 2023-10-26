@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 05:35:20 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/21 00:58:12 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:07:36 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,36 +18,23 @@ char	*ft_itoa(int n)
 	int		numdigits;
 	long	lin;
 	char	*result;
-	long	temp;
 
-	sign = 1;
-	numdigits = 0;
-	lin = n;
-	if (lin < 0)
-	{
-		sign = -1;
-		lin = -lin;
-		numdigits++;
-	}
-	temp = lin;
-	while (temp >= 10)
-	{
-		numdigits++;
-		temp /= 10;
-	}
-	numdigits++;
-	result = (char *)malloc((numdigits + 2) * sizeof(char) - 1);
+	sign = -1 * (n < 0);
+	numdigits = (n < 0) * 1;
+	lin = (-2 * ((long)n < 0) * (long)n) + (long)n;
+	while (numdigits++, lin >= 10)
+		lin /= 10;
+	result = (char *)malloc((numdigits + 1) * sizeof(char));
 	if (result == NULL)
 		return (NULL);
+	lin = (-2 * ((long)n < 0) * (long)n) + (long)n;
 	result[numdigits] = '\0';
-	numdigits--;
 	while (lin >= 10)
 	{
-		result[numdigits] = (lin % 10) + '0';
+		result[--numdigits] = (lin % 10) + '0';
 		lin /= 10;
-		numdigits--;
 	}
-	result[numdigits] = lin + '0';
+	result[--numdigits] = lin + '0';
 	if (sign == -1)
 		result[0] = '-';
 	return (result);
