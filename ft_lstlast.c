@@ -6,10 +6,16 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 02:17:51 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/28 02:18:05 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/28 23:06:27 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstlast(t_list *lst)
+{
+	while (lst && lst->next)
+		lst = lst->next;
+	return (lst);
+}
+
