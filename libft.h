@@ -6,14 +6,14 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:18:47 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/28 22:22:43 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/29 01:19:51 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stdlib.h> //malloc
-# include <unistd.h> //write
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
