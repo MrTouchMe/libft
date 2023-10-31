@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 05:36:15 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/28 20:15:24 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2023/10/31 03:11:42 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int	write_split(char **split, const char *s, char charset)
 {
 	int	i;
 	int	word;
-	int	size;
 
 	i = 0;
 	word = 0;

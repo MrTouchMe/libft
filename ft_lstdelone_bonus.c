@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 02:28:29 by dgiurgev          #+#    #+#             */
-/*   Updated: 2023/10/31 03:03:23 by dgiurgev         ###   ########.fr       */
+/*   Created: 2023/10/28 02:19:22 by dgiurgev          #+#    #+#             */
+/*   Updated: 2023/10/30 00:26:50 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
-
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
+	if (lst != NULL)
 	{
-		if (str1[i] != str2[i])
-			return ((int)(str1[i] - str2[i]));
-		i++;
+		if (del != NULL)
+			del(lst->content);
+		free(lst);
 	}
-	return (0);
 }
