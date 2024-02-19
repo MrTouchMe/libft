@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 20:56:22 by dgiurgev          #+#    #+#             */
-/*   Updated: 2024/02/19 19:56:46 by dgiurgev         ###   ########.fr       */
+/*   Created: 2024/02/19 19:56:28 by dgiurgev          #+#    #+#             */
+/*   Updated: 2024/02/19 19:56:59 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	int	i;
 	int	result;
