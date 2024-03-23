@@ -6,7 +6,7 @@
 /*   By: dgiurgev <dgiurgev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:18:47 by dgiurgev          #+#    #+#             */
-/*   Updated: 2024/02/19 19:57:04 by dgiurgev         ###   ########.fr       */
+/*   Updated: 2024/03/23 06:22:26 by dgiurgev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <unistd.h>
+# include <stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+# ifndef FD_SETSIZE
+#  define FD_SETSIZE 1024
+# endif
 
 typedef struct s_list
 {
@@ -68,4 +78,19 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+// printf
+int					ft_printf(const char *format, ...);
+void				ft_parse(char conversion_specifier, va_list args, int *len);
+void				ft_putchar_pf(char c, int *len);
+void				ft_putstr_pf(char *str, int *len);
+void				ft_putnbr_pf(long long int nbr, int base, char x, int *len);
+void				ft_putnbr_ptr(size_t nbr, int base, int *len);
+void				ft_putptr(size_t nbr, int base, int *len);
+// GNL
+char				*get_next_line(int fd);
+void				*ft_calloc_gnl(size_t count, size_t size);
+char				*ft_strjoin_gnl(char *s1, char const *s2);
+char				*ft_strchr_gnl(const char *s, int c);
+int					ft_strlen_gnl(const char *s);
+void				ft_bzero_gnl(void *s, size_t n);
 #endif
